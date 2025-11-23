@@ -15,12 +15,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="customers.html">
-              <span data-feather="shopping-cart"></span>
-              Customers
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="orders.php">
               <span data-feather="shopping-cart"></span>
               Orders
