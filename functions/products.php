@@ -13,19 +13,6 @@ function getAllProducts(){
     }
     return $data;
 }
-
-// //Invoice
-// function getAllProducts(){
-//     $conn = Connect();
-//     $query = 'SELECT * FROM invoice';
-//     $result= $conn->query($query); //Executes query
-//     $data = [];
-
-//     while($row = $result->fetch_assoc()){
-//         $data[]=$row;
-//     }
-//     return $data;
-// }
 function deleteProduct($id){
     $conn = Connect();
     $query = "DELETE FROM invoice WHERE inv_number='$id'";
@@ -43,4 +30,17 @@ function joinproduct(){
     ON c.cus_code = i.cus_code;";
     $result =$conn->query($query);
     return $result;
+}
+
+function getAllCustomers(){
+    $conn = Connect();
+    $query = "SELECT cus_code, CONCAT( cus_fname, ' ', cus_initial, ' ' , cus_lname) AS CustomerName,
+    cus_areacode,cus_phone, cus_balance
+    FROM customer;";
+    $result = $conn->query($query);
+    $data = [];
+    while($row = $result->fetch_assoc()){
+        $data[]=$row;
+    }
+    return $data;
 }
